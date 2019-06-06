@@ -1,6 +1,6 @@
 import React, { Component, Fragment} from 'react';
 import Navbar from './components/layout/Navbar';
-import UserItem from './components/users/UserItem';
+import Users from './components/users/Users';
 
 import './App.css';
 
@@ -14,7 +14,9 @@ render(){
   return (
     <Fragment>
       <Navbar  />
-      <UserItem />
+      <div className="container">
+      <Users />
+      </div>
     </Fragment>
   );
   
