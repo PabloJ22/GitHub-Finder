@@ -1,5 +1,6 @@
 import React, { Component, Fragment} from 'react';
 import Navbar from './components/layout/Navbar';
+import UserItem from './components/users/UserItem';
 
 import './App.css';
 
@@ -13,6 +14,7 @@ render(){
   return (
     <Fragment>
       <Navbar  />
+      <UserItem />
     </Fragment>
   );
   
