@@ -14,24 +14,24 @@ class App extends Component  {
       loading: false
     }
 
+      //search github users
+      searchUsers = async text => {
+        this.setState({loading:true});
 
-  async componentDidMount(){
+        const res = await axios
+  
+    .get(`https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
 
-    this.setState({loading:true});
+this.setState({users:res.data.items, loading:false});
 
-    const res = await axios
-    // eslint-disable-next-line no-template-curly-in-string
-    .get('https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}');
-
-this.setState({users:res.data, loading:false});
-      };
+      }
 
 render(){
   return (
     <Fragment>
       <Navbar  />
       <div className="container">
-      <Search />
+      <Search searchUsers={this.searchUsers} />
       <Users loading={this.state.loading} users={this.state.users} />
       </div>
     </Fragment>
