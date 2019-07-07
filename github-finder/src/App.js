@@ -1,4 +1,5 @@
 import React, { Component, Fragment} from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'; 
 import Navbar from './components/layout/Navbar';
 import Users from './components/users/Users';
 import Search from './components/users/Search';
@@ -46,6 +47,7 @@ render(){
 const {loading, users} = this.state;
 
   return (
+    <Router>
     <Fragment>
       <Navbar  />
       <div className="container">
@@ -54,6 +56,7 @@ const {loading, users} = this.state;
       <Users loading={loading} users={users} />
       </div>
     </Fragment>
+    </Router>
   );
   
 }
