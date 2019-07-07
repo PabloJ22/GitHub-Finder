@@ -14,6 +14,7 @@ class App extends Component  {
 
     state = {
       users: [],
+      user:{},
       loading: false,
       alert:null
     }
@@ -30,6 +31,17 @@ this.setState({users:res.data.items, loading:false});
 
       }
 
+      //Get single Github user
+      getUser = async(username) => {
+        this.setState({loading:true});
+
+        const res = await axios
+  
+    .get(`https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+
+this.setState({user:res.data, loading:false});
+      }
+
       //clear users from state
       clearUsers = () => this.setState({users: [], loading: false });
 
@@ -39,6 +51,8 @@ this.setState({users:res.data.items, loading:false});
 
         setTimeout(() => this.setState({alert:null}), 5000);
       }
+
+
 
 
 
