@@ -29,7 +29,7 @@ class App extends Component  {
   
     .get(`https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
 
-this.setState({users:res.data.items, loading:false});
+      this.setState({users:res.data.items, loading:false});
 
       }
 
@@ -41,7 +41,7 @@ this.setState({users:res.data.items, loading:false});
   
     .get(`https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
 
-this.setState({user:res.data, loading:false});
+      this.setState({user:res.data, loading:false});
       }
 
       //Get users repos
