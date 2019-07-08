@@ -1,9 +1,18 @@
 import React,{Component, Fragment} from 'react';
+import Spinner from '../layout/Spinner';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 class User extends Component {
 
   componentDidMount() {
     this.props.getUser(this.props.match.params.login);
+  }
+
+  static propTypes = {
+    loading: PropTypes.bool,
+    user: PropTypes.object.isRequired,
+    getUser: PropTypes.func.isRequired
   }
 
   render() {
@@ -25,9 +34,13 @@ class User extends Component {
 
       const {loading} = this.props;
 
+      if(loading) return <Spinner/>;
+
     return(
       <Fragment>
-        <p>{name}</p>
+         <Link to='/' className='btn btn-light'>
+          Back to Search
+         </Link>
       </Fragment>
     )
   }
