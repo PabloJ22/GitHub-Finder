@@ -1,6 +1,6 @@
 ## "GitHub-Finder" - React Application
 
-Search a GitHub Username and view their profile. <br>
+Search a _GitHub Username_ and view their profile. <br>
 Site Deployed using Netlify.
 
 ---
