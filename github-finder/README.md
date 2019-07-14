@@ -17,4 +17,4 @@ React application built using Functional Components, new React Hooks(useContext,
 
 ### `Visit Deployed Site -->` https://react-githubfinder.netlify.com/
 
-![Site screenShot available inside 'github-finder' directory above.](img/GHfinderClean.JPG)
+![Site screenShot available inside 'github-finder' directory above.](public/img/GHfinderClean.JPG)
